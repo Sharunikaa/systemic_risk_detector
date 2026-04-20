@@ -1,0 +1,50 @@
+# ─── Raw data ───────────────────────────────────────────────────────
+spx_raw:       "data/1_raw/spx_raw.csv"
+gold_raw:      "data/1_raw/gold_raw.csv"
+btc_raw:       "data/1_raw/btc_raw.csv"
+vix_raw:       "data/1_raw/vix_raw.csv"
+
+# ─── Aligned prices ─────────────────────────────────────────────────
+aligned_prices: "data/2_aligned/aligned_prices.csv"
+
+# ─── Returns ────────────────────────────────────────────────────────
+log_returns:         "data/3_returns/log_returns.csv"
+winsorized_returns:  "data/3_returns/winsorized_returns.csv"
+
+# ─── Volatility ─────────────────────────────────────────────────────
+volatility: "data/4_volatility/volatility.csv"
+
+# ─── Correlations ───────────────────────────────────────────────────
+correlations: "data/5_correlations/correlations.csv"
+
+# ─── Features ───────────────────────────────────────────────────────
+feature_matrix: "data/6_features/feature_matrix.csv"
+
+# ─── Models ─────────────────────────────────────────────────────────
+hmm_model:    "outputs/models/hmm_v1.pkl"
+xgb_model:    "outputs/models/xgb_v1.pkl"
+lstm_model:   "outputs/models/lstm_v5.pt"
+tft_model:    "outputs/models/tft_v1.pt"
+vqh_model:    "outputs/models/vqh_v1.pt"
+
+# ─── Predictions ────────────────────────────────────────────────────
+hmm_predictions:     "outputs/predictions/hmm_predictions.csv"
+xgb_predictions:     "outputs/predictions/xgb_predictions.csv"
+lstm_predictions:    "outputs/predictions/lstm_predictions.csv"
+tft_predictions:     "outputs/predictions/tft_predictions.csv"
+vqh_predictions:     "outputs/predictions/vqh_predictions.csv"
+
+# ─── Metrics ────────────────────────────────────────────────────────
+hmm_metrics:          "outputs/metrics/hmm_metrics.json"
+xgb_metrics:          "outputs/metrics/xgb_metrics.json"
+lstm_metrics:         "outputs/metrics/lstm_metrics.json"
+tft_metrics:          "outputs/metrics/tft_metrics.json"
+vqh_metrics:          "outputs/metrics/vqh_metrics.json"
+xgb_feature_importance: "outputs/metrics/xgb_feature_importance.json"
+benchmark_results:    "outputs/metrics/benchmark_results.json"
+benchmark_final:      "outputs/metrics/benchmark_results_final.json"
+best_model:           "outputs/metrics/best_model.txt"
+
+# ─── Figures ────────────────────────────────────────────────────────
+lead_lag_fig:          "outputs/figures/lead_lag_SVB2023.png"
+entanglement_fig:      "outputs/figures/entanglement_entropy.png"

@@ -1,0 +1,59 @@
+# ─── Tickers & date range ──────────────────────────────────────────
+tickers:
+  spx:  "^GSPC"
+  gold: "GLD"
+  btc:  "BTC-USD"
+  vix:  "^VIX"
+
+start_date: "2014-09-17"
+end_date:   "2024-12-31"
+
+# ─── Train / Val / Test splits ─────────────────────────────────────
+splits:
+  train_start: "2015-01-12"
+  train_end:   "2021-12-31"
+  val_start:   "2022-01-01"
+  val_end:     "2022-12-31"
+  test_start:  "2023-01-01"
+  test_end:    "2024-12-31"
+
+# ─── Crisis labelling thresholds (all tunable) ─────────────────────
+crisis_labelling:
+  vix_threshold:       30        # Condition B: VIX > this
+  spx_ret_threshold:   -0.015   # Condition A: SPX return < this
+  btc_garch_sigma:     2.0      # Condition A: BTC GARCH > μ + n*σ
+  btc_spx_corr_neg:    0.0      # Condition A: rho_spx_btc_30 < this
+
+# ─── Winsorization percentiles ─────────────────────────────────────
+winsorize:
+  lower_pct: 1    # 1st percentile
+  upper_pct: 99   # 99th percentile
+
+# ─── Volatility ─────────────────────────────────────────────────────
+volatility:
+  rolling_window: 20      # trading days ≈ 1 calendar month
+  trading_days:   252     # annualisation factor (sqrt)
+
+# ─── Correlation windows ────────────────────────────────────────────
+correlations:
+  short_window: 30
+  long_window:  60
+
+# ─── Known crisis validation dates ─────────────────────────────────
+crisis_validation_dates:
+  - "2020-03-16"   # COVID crash peak
+  - "2020-03-20"   # circuit breaker
+  - "2022-05-09"   # LUNA/Terra collapse
+  - "2023-03-13"   # SVB contagion
+
+# ─── Black-swan evaluation windows ─────────────────────────────────
+black_swan_windows:
+  COVID_2020:
+    start: "2020-02-01"
+    end:   "2020-05-31"
+  Crypto_2022:
+    start: "2022-05-01"
+    end:   "2022-07-31"
+  SVB_2023:
+    start: "2023-03-01"
+    end:   "2023-05-31"

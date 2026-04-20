@@ -1,0 +1,83 @@
+# ─── Gaussian HMM ──────────────────────────────────────────────────
+hmm:
+  n_components:      3
+  covariance_type:   "full"
+  n_iter:            200
+  n_init:            10
+  random_state:      42
+  bic_components:    [2, 3, 4]   # evaluated but only 3 used
+
+# ─── XGBoost ───────────────────────────────────────────────────────
+xgboost:
+  n_estimators:       500
+  max_depth:          6
+  learning_rate:      0.05
+  subsample:          0.8
+  colsample_bytree:   0.8
+  eval_metric:        "mlogloss"
+  early_stopping:     30
+  random_state:       42
+
+# ─── LSTM + Attention ──────────────────────────────────────────────
+lstm:
+  seq_len:       20
+  hidden_size:   128
+  n_layers:      2
+  dropout:       0.3
+  bidirectional: false
+  # Training
+  lr:            0.001
+  weight_decay:  1.0e-5
+  epochs:        150
+  batch_size:    32
+  early_stop_patience: 20
+  grad_clip:     1.0
+  # FocalLoss
+  focal_gamma:   2.0
+  crisis_weight_multiplier: 4   # on top of inverse-freq weight
+  # Augmentation
+  augment_factor: 3
+  augment_noise:  0.01
+  random_state:   42
+
+# ─── Temporal Fusion Transformer ───────────────────────────────────
+tft:
+  seq_len:      20
+  hidden:       64
+  n_heads:      4
+  n_classes:    3
+  dropout:      0.1
+  # Training (same as LSTM)
+  lr:            0.001
+  weight_decay:  1.0e-5
+  epochs:        150
+  batch_size:    32
+  early_stop_patience: 20
+  grad_clip:     1.0
+  focal_gamma:   2.0
+  crisis_weight_multiplier: 4
+  augment_factor: 3
+  augment_noise:  0.01
+  random_state:   42
+
+# ─── VQH ───────────────────────────────────────────────────────────
+vqh:
+  n_qubits:          3
+  n_layers:          2
+  n_classes:         3
+  # Training
+  lr_quantum:        0.01
+  lr_classical:      0.001
+  weight_decay:      1.0e-5
+  epochs:            100
+  batch_size:        32
+  early_stop_patience: 15
+  focal_gamma:       2.0
+  crisis_weight_multiplier: 4
+  random_state:      42
+
+# ─── Global seeds ──────────────────────────────────────────────────
+seeds:
+  numpy:   42
+  torch:   42
+  python:  42
