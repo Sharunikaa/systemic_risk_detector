@@ -589,23 +589,32 @@ python scripts/run_phase4_serve.py  # Start Dashboard
 
 ### Overview
 Systemic risk overview with crisis regime timeline, asset performance, current regime status, and VQH lead/lag analysis.
-![Systemic Risk Overview](outputs/figures/overview.png)
+
+![Systemic Risk Overview 1](doc/figures/overview.jpeg)
+![Systemic Risk Overview 2](doc/figures/overview_2.jpeg)
 
 ### Predictions
 Real-time market prediction interface. Input BTC, SPX, and Gold returns/volatility plus correlation metrics to get predictions from all 5 models.
-![Custom Market Data Prediction](outputs/figures/predictions.png)
+
+![Custom Market Data Prediction 1](doc/figures/prediction.jpeg)
+![Custom Market Data Prediction 2](doc/figures/prediction_2.jpeg)
 
 ### Model Comparison
 Comprehensive benchmark across HMM, XGBoost, LSTM, TFT, and VQH. Shows accuracy, macro F1, crisis recall, and PR-AUC with confusion matrices and PR curves.
-![Model Comparison Benchmark](outputs/figures/model-comparison.png)
+
+![Model Comparison Benchmark](doc/figures/model-comparision.jpeg)
 
 ### Quantum Results
 Variational Quantum HMM (VQH) circuit architecture, performance metrics, and quantum-specific analysis including entanglement entropy as systemic risk proxy.
-![Quantum Results & Circuit Architecture](outputs/figures/quantum-results.png)
 
-### Black Swan Event Detection
-Leading indicator analysis for major crises (COVID-19, Crypto Winter, SVB Collapse). Shows LSTM vs VQH detection on real events with lead/lag timing.
-![Black Swan Event Detection](outputs/figures/black-swan.png)
+![Quantum Results & Circuit Architecture 1](doc/figures/quantum-results.jpeg)
+![Quantum Results & Circuit Architecture 2](doc/figures/quantum-results-2.jpeg)
+
+### Quantum Entanglement Analysis
+Entanglement entropy as a proxy for systemic risk, with crisis periods showing higher interconnectedness.
+
+![Quantum Entanglement Entropy Timeline](doc/figures/entanglement_entropy.png)
+![VQH vs LSTM Lead/Lag Around SVB 2023](doc/figures/lead_lag_SVB2023.png)
 
 ## Features
 
